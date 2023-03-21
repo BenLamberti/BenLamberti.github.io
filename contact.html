@@ -1,0 +1,55 @@
+<!doctype html>
+
+ <html>
+     <head>
+         <meta charset="utf-8">
+
+        <title>Contact</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+     </head>
+
+     <body>
+
+         <style>
+        body {
+        background-image: url(./black_square.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        }
+        </style>
+
+        <div class="header">
+        <h1>Contact Me</h1>
+        <p></p>
+
+        <nav>
+        <a id='about_me_link' href="./about-me.html" style="visibility: hidden">About Me</a> 
+        <a id='projects_link' href="./projects.html" style="visibility: hidden">Projects</a> 
+        <a id='home_link' href="./index.html" style="visibility: hidden">Homepage</a> 
+        <a id='contact_link' href="./contact.html" style="visibility: hidden">Contact/Links</a>
+        </nav>
+
+        <!-- Tab links -->
+        <div class="tab">
+        <button class="tablinks" onclick="window.location.href = home_link;"><span style='font-family: Abril Fatface'>Home</span></button>
+        <button class="tablinks" onclick="window.location.href = about_me_link;"><span style='font-family: Abril Fatface'>About Me</span></button>
+        <button class="tablinks" onclick="window.location.href = projects_link;"><span style='font-family: Abril Fatface'>Projects</span></button>
+        <button class="tablinks" onclick="window.location.href = contact_link;"><span style='font-family: Abril Fatface'>Contact/Links</span></button>
+        </div>
+
+        <div class="audio_files">
+        <audio id="sound1" src=''/>
+        <audio id="sound2" src=''/>
+        <audio id="sound3" src=''/>
+        <audio id="sound4" src=''/>
+        </div>
+
+        <!-- Load external JavaScript -->
+        <script src="scripts.js"></script>
+
+        </div> 
+     </body>
+ </html>
