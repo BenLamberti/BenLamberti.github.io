@@ -31,12 +31,28 @@ p {
 .header {
   position:absolute;
   overflow: hidden;
-  padding: 60px 0px;
+  padding: 10px 0px;
   text-align: center;
-  background-color: #0089ff;
+  background-color: #102c5a;
   background-image: none;
   color: white;
   font-size: 30px;
+  top: 60px;
+  left: 0%;
+  margin: 0;
+  width: 100%;
+}
+
+.project_template_header {
+  position:absolute;
+  overflow: hidden;
+  padding: 10px 0px;
+  text-align: center;
+  background-color: #102c5a;
+  background-image: url('project_image_url');
+  color: white;
+  font-size: 30px;
+  top: 60px;
   left: 0%;
   margin: 0;
   width: 100%;
@@ -47,31 +63,34 @@ p {
  /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 2px solid #ff7501;
+  border: 0px solid #0089ff;
   background-color: #0089ff;
   position: fixed; 
   top: 0;
   left: 0%;
   width: 100%;
-  height: 60px
+  height: 60px;
+  z-index: 10;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
   position: static;
+  display: block;
   background-color: inherit;
+  color: #fcfdff;
   border: none;
-  display: inline-block;
-  float: none;
+  float: left;
   cursor: pointer;
   height: 100%;
+  top: 0px;
   padding: 14px 40px;
   transition: 0.3s;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: rgb(221, 221, 221);
+  background-color: #102c5a;
 }
 
 /* Create an active/current tablink class */
@@ -91,9 +110,11 @@ p {
 } 
 
 .logo_image {
-  display: inline-block;
+  display: block;
   left: 50%;
+  float: inline-start;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 
@@ -116,7 +137,10 @@ input#un-mute:checked ~ .mute img {
 
 /* Style the container for the project tiles */
 .tiles {
+  position: relative;
+  top: 220px;
   width: 90%;
+  left: 5%;
   font-size: 0;
   margin: auto;
 }
@@ -173,12 +197,13 @@ html {
 
 body {
   background: #000;
-  height: 500vh;
+  height: 100vh;
 }
 
 /* This canvas element contains the animation */
 canvas {
-  position: fixed;
+  position: relative;
+  visibility: hidden;
   left: 50%;
   top: 50vh;
   max-height: 100vh;
@@ -186,3 +211,131 @@ canvas {
   transform: translate(-50%, -50%);
   z-index: -1;
 }
+
+/* Slideshow on the about-me page */
+.slideshow {
+  width: 100%;
+  margin: 0 auto;
+  position: static;
+  overflow: hidden;
+}
+
+.slideshow img {
+  width: 100%;
+  position: absolute;
+  top: 220px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+/* Video for the project template */
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* set to 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 220px;
+  left: 0;
+  width: 70%;
+  height: 70%;
+}
+
+.video-container p {
+  position: absolute;
+  top: 220px;
+  left: 72%;
+  height: 70%;
+  color: black;
+}
+
+/* Contact page styling */
+
+.contact-container {
+  position: relative;
+  top: 220px;
+	max-width: 100%;
+	padding: 0 20px;
+}
+
+form {
+	display: flex;
+  top: 220px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+label {
+	flex-basis: 100%;
+	margin-bottom: 10px;
+  color: white;;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	flex-basis: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+  font-family: Abril Fatface;
+}
+
+textarea {
+	height: 150px;
+}
+
+input[type="submit"] {
+	background-color: #008CBA;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.contact-info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid #ccc;
+	padding: 20px 0;
+}
+
+.contact-info p {
+  font-family: Abril Fatface;
+  color: white;
+	flex-basis: 100%;
+	margin-bottom: 10px;
+}
+
+.contact-info ul {
+	flex-basis: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+}
+
+.contact-info li {
+	list-style: none;
+}
+
+.contact-info a {
+	color: #008CBA;
+	text-decoration: none;
+}
+
+
+
