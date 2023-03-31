@@ -111,7 +111,7 @@ margin: 0 0;
 .logo_image {
   display: block;
   left: 50%;
-  float: inline-start;
+  float: left;
   margin: 0 auto;
   padding: 5px;
   cursor: pointer;
