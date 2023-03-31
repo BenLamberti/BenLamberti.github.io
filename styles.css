@@ -1,27 +1,29 @@
+/* Place your CSS styles in this file */
+
 h1 {
   text-align: center;
-  font-family: Abril Fatface;
+  font-family: Roboto;
   font-weight: bold;
   color: white;
 }
 
 h2 {
   text-align: left;
-  font-family: Abril Fatface;
+  font-family: Roboto;
   font-weight: bold;
   color: green;
 }
 
 h3 {
   text-align: left;
-  font-family: Abril Fatface;
+  font-family: Roboto;
   font-weight: bold;
   color: white;
 }
 
 p {
   text-align: left;
-  font-family: Abril Fatface;
+  font-family: Roboto;
   font-weight: normal;
   color: white;
 }
@@ -32,7 +34,6 @@ overflow: hidden;
 padding: 10px 0px;
 text-align: center;
 background-color: #102c5a;
-background-image: none;
 color: white;
 font-size: 30px;
 top: 60px;
@@ -118,57 +119,56 @@ cursor: pointer;
 
 /* Changes the mute/unmute icon when clicked */
 input#un-mute {
-  display: none;
+display: none;
 }
 
 .unmute i,
 .mute i {
-  display: none;
-  font-size: 32px;
+display: none;
+font-size: 32px;
 }
 
 .unmute i {
-  float: right;
+float: right;
 }
 
 input#un-mute:not(:checked) ~ .unmute i {
-  display: initial;
+display: initial;
 }
 
 input#un-mute:not(:checked) ~ .mute i {
-  display: none;
+display: none;
 }
 
 input#un-mute:checked ~ .unmute i {
-  display: none;
+display: none;
 }
 
 input#un-mute:checked ~ .mute i {
-  display: inline-block;
-  float: right;
-  position: relative;
-  top: 3px;
+display: inline-block;
+float: right;
+position: relative;
+top: 3px;
 }
+
 
 /* Styling for the home page */
 
 .biography {
-  position: relative;
-  top: 0;
-  left: 2%;
-  width: 96%;
-  transform: translate(0, -360px);
+position: fixed;
+top: 33%;
+left: 2%;
+width: 96%;
 }
 
 .biography p {
-  text-align: center;
-  margin: 1em 0;
+text-align: center;
+margin: 1em 0;
 }
 
 .biography img {
-  position: absolute;
-  width: 100%;
-  height: fit-content;
+position: absolute;
+width: 100%;
 }
 
 /* Style the container for the project tiles */
@@ -373,7 +373,7 @@ padding: 10px;
 border-radius: 5px;
 border: 1px solid #ccc;
 margin-bottom: 20px;
-font-family: Abril Fatface;
+font-family: Roboto;
 }
 
 textarea {
@@ -399,7 +399,7 @@ padding: 20px 0;
 }
 
 .contact-info p {
-font-family: Abril Fatface;
+font-family: Roboto;
 color: white;
 flex-basis: 100%;
 margin-bottom: 10px;
@@ -432,7 +432,7 @@ color: #008CBA;
 text-decoration: none;
 }
 
-.contact-info li:nth-child(5) a img {
+.contact-info li:nth-child(6) a img {
 display: inline-block;
 width: 1.5rem;
 height: 1.5rem;
@@ -440,7 +440,7 @@ margin-right: 0.5rem;
 vertical-align: middle;
 }
 
-.contact-info li:nth-child(6) a img {
+.contact-info li:nth-child(7) a img {
 display: inline-block;
 width: 1.5rem;
 height: 1.5rem;

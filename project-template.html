@@ -1,88 +1,89 @@
 <!doctype html>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <script src="https://kit.fontawesome.com/087e123773.js" crossorigin="anonymous"></script>
+ <html>
+     <head>
+         <meta charset="utf-8">
+         <script src="https://kit.fontawesome.com/087e123773.js" crossorigin="anonymous"></script>
+         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 
-       <title>Project Title</title>
+        <title>Project Title</title>
 
-       <!-- Load external CSS styles -->
-       <link rel="stylesheet" href="styles.css">
-    </head>
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+     </head>
 
-    <body>
+     <body>
 
-       <style>
-       body {
-       background-color: black;
-       background-repeat: no-repeat;
-       background-attachment: fixed;
-       background-size: cover;
-       z-index: 0;
-       }
-       </style>
+        <style>
+        body {
+        background-color: grey;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        z-index: 0;
+        }
+        </style>
 
-       <div class="project_template_header">
-       <h1>Project Title</h1>
-       <p></p>
-       </div>
+        <div class="project_template_header">
+        <h1>Project Title</h1>
+        <p></p>
+        </div>
 
-       <!-- link definitions for the tab buttons -->
-       <nav>
-       <a id='about_me_link' href="./about-me.html" style="visibility: hidden">About Me</a> 
-       <a id='projects_link' href="./projects.html" style="visibility: hidden">Projects</a> 
-       <a id='home_link' href="./index.html" style="visibility: hidden">Homepage</a> 
-       <a id='contact_link' href="./contact.html" style="visibility: hidden">Contact/Links</a>
-       </nav>
+        <!-- link definitions for the tab buttons -->
+        <nav>
+        <a id='about_me_link' href="./about-me.html" style="visibility: hidden">About Me</a> 
+        <a id='projects_link' href="./projects.html" style="visibility: hidden">Projects</a> 
+        <a id='home_link' href="./index.html" style="visibility: hidden">Homepage</a> 
+        <a id='contact_link' href="./contact.html" style="visibility: hidden">Contact/Links</a>
+        </nav>
 
-       <!-- tab button links and sound function calls -->
-       <div class="tab">
-       <!-- checkbox for the mute toggle -->
-       <div class="speaker">
-        <input type="checkbox" name="un-mute" id="un-mute" onchange="toggleMute(this)">
-        <label for="un-mute" class="unmute">
-        <i class="fas fa-volume-mute" style="cursor: pointer;" title="Mute icon" align="right" valign="top"></i>
-        </label>
+        <!-- tab button links and sound function calls -->
+        <div class="tab">
+        <!-- checkbox for the mute toggle -->
+        <div class="speaker">
+            <input type="checkbox" name="un-mute" id="un-mute" onchange="toggleMute(this)">
+            <label for="un-mute" class="unmute">
+            <i class="fas fa-volume-mute" style="cursor: pointer;" title="Mute icon" align="right" valign="top"></i>
+            </label>
 
-        <label for="un-mute" class="mute">
-        <i class="fas fa-volume-high" style="cursor: pointer;" title="Mute icon" align="right" valign="top"></i>
-        </label>
+            <label for="un-mute" class="mute">
+            <i class="fas fa-volume-high" style="cursor: pointer;" title="Mute icon" align="right" valign="top"></i>
+            </label>
+        </div>
+        <!-- buttons for the tab links -->
+        <img class="logo_image" onclick="window.location.href = home_link;" src='https://github.com/BenLamberti/BenLamberti.github.io/blob/main/DRS_Simple_Logo.png?raw=true' height='100%' alt="logo_image">
+        <button class="tablinks" onclick="window.location.href = home_link;" onmouseover="playSound('sound1')" onmouseout="stopSound('sound1')"><span style='font-family: Roboto'>Home</span></button>
+        <button class="tablinks" onclick="window.location.href = about_me_link;" onmouseover="playSound('sound2')" onmouseout="stopSound('sound2')"><span style='font-family: Roboto'>About Me</span></button>
+        <button class="tablinks" onclick="window.location.href = projects_link;" onmouseover="playSound('sound3')" onmouseout="stopSound('sound3')"><span style='font-family: Roboto'>Projects</span></button>
+        <button class="tablinks" onclick="window.location.href = contact_link;" onmouseover="playSound('sound4')" onmouseout="stopSound('sound4')"><span style='font-family: Roboto'>Contact/Links</span></button> 
+        </div>
+
+        <!-- audio files that are connected to the tab buttons -->
+        <div class="audio_files">
+        <audio id="sound1" src=''/>
+        <audio id="sound2" src=''/>
+        <audio id="sound3" src='http://www.hyperion-records.co.uk/audiotest/3%20Schubert%20String%20Quartet%20No%2014%20in%20D%20minor%20Death%20and%20the%20Maiden,%20D810%20-%20Movement%203%20Scherzo%20Allegro%20molto.MP3'/>
+        <audio id="sound4" src='http://www.hyperion-records.co.uk/audiotest/18%20MacCunn%20The%20Lay%20of%20the%20Last%20Minstrel%20-%20Part%202%20Final%20chorus%20O%20Caledonia!%20stern%20and%20wild.MP3'/>
+        </div>
+
+        <!-- youtube video embedding -->
+        <div class="auto-resizable-iframe">
+  <div>
+    <iframe frameborder="0" allowfullscreen="true" src="https://www.youtube.com/embed/wnhvanMdx4s"></iframe>
+  </div>
+  <div class="project_main">
+    <img class="project_image_main" src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Amp%201.png?raw=true"/>
+    <p class="project_info_main">Here is the information about the project</p>
+    <div class="project_images">
+      <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Amp%201.png?raw=true"/>
+      <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Amp%201.png?raw=true"/>
+      <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Amp%201.png?raw=true"/>
     </div>
-       <!-- buttons for the tab links -->
-       <img class="logo_image" onclick="window.location.href = home_link;" src='https://github.com/BenLamberti/BenLamberti.github.io/blob/main/DRS_Simple_Logo.png?raw=true' height='100%' alt="logo_image">
-       <button class="tablinks" onclick="window.location.href = home_link;" onmouseover="playSound('sound1')" onmouseout="stopSound('sound1')"><span style='font-family: Abril Fatface'>Home</span></button>
-       <button class="tablinks" onclick="window.location.href = about_me_link;" onmouseover="playSound('sound2')" onmouseout="stopSound('sound2')"><span style='font-family: Abril Fatface'>About Me</span></button>
-       <button class="tablinks" onclick="window.location.href = projects_link;" onmouseover="playSound('sound3')" onmouseout="stopSound('sound3')"><span style='font-family: Abril Fatface'>Portfolio</span></button>
-       <button class="tablinks" onclick="window.location.href = contact_link;" onmouseover="playSound('sound4')" onmouseout="stopSound('sound4')"><span style='font-family: Abril Fatface'>Contact</span></button> 
-       </div>
-
-       <!-- audio files that are connected to the tab buttons -->
-       <div class="audio_files">
-       <audio id="sound1" src=''/>
-       <audio id="sound2" src=''/>
-       <audio id="sound3" src='http://www.hyperion-records.co.uk/audiotest/3%20Schubert%20String%20Quartet%20No%2014%20in%20D%20minor%20Death%20and%20the%20Maiden,%20D810%20-%20Movement%203%20Scherzo%20Allegro%20molto.MP3'/>
-       <audio id="sound4" src='http://www.hyperion-records.co.uk/audiotest/18%20MacCunn%20The%20Lay%20of%20the%20Last%20Minstrel%20-%20Part%202%20Final%20chorus%20O%20Caledonia!%20stern%20and%20wild.MP3'/>
-       </div>
-
-       <!-- youtube video embedding -->
-       <div class="auto-resizable-iframe">
- <div>
-   <iframe frameborder="0" allowfullscreen="true" src="https://www.youtube.com/embed/wnhvanMdx4s"></iframe>
- </div>
- <div class="project_main">
-   <img class="project_image_main" src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Amp%201.png?raw=true"/>
-   <p class="project_info_main">Here is the information about the project</p>
-   <div class="project_images">
-     <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Amp%201.png?raw=true"/>
-     <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Amp%201.png?raw=true"/>
-     <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Amp%201.png?raw=true"/>
-   </div>
-   <p class="project_info">More text for the project</p> 
- </div>
+    <p class="project_info">More text for the project</p> 
+  </div>
 </div>
 
-       <!-- Load external JavaScript -->
-       <script src="scripts.js"></script> 
-    </body>
-</html>
+        <!-- Load external JavaScript -->
+        <script src="scripts.js"></script> 
+     </body>
+ </html>
