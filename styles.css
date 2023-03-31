@@ -109,11 +109,12 @@ margin: 0 0;
 } 
 
 .logo_image {
-display: block;
-left: 50%;
-float: inline-start;
-margin: 0 auto;
-cursor: pointer;
+  display: block;
+  left: 50%;
+  float: inline-start;
+  margin: 0 auto;
+  padding: 5px;
+  cursor: pointer;
 }
 
 
@@ -155,20 +156,26 @@ top: 3px;
 /* Styling for the home page */
 
 .biography {
-position: fixed;
-top: 33%;
-left: 2%;
-width: 96%;
+  position: absolute;
+  top: 220px;
+  left: 2%;
+  width: 96%;
+}
+
+.text_wrapper {
+  position: relative;
+  padding: 30px;
+  top: 0px;
 }
 
 .biography p {
-text-align: center;
-margin: 1em 0;
+  text-align: center;
+  margin: 1em 0;
 }
 
 .biography img {
-position: absolute;
-width: 100%;
+  position: block;
+  width: 100%;
 }
 
 /* Style the container for the project tiles */
