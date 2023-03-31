@@ -3,6 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <script src="https://kit.fontawesome.com/087e123773.js" crossorigin="anonymous"></script>
 
        <title>About Me</title>
 
@@ -21,9 +22,11 @@
        }
        </style>
 
-       <div class="header">
-       <h1>About Me</h1>
-       <p></p>
+       <div class="header" style="background-image: url('https://github.com/BenLamberti/deafrain.github.io/blob/main/About_Banner_Blue.png?raw=true'); background-size: cover; background-position: center;">
+ <h1 style="visibility: hidden">About</h1>
+ <p></p>
+</div>
+
 
        <nav>
        <a id='about_me_link' href="./about-me.html" style="visibility: hidden">About Me</a> 
@@ -32,12 +35,25 @@
        <a id='contact_link' href="./contact.html" style="visibility: hidden">Contact/Links</a>
        </nav>
 
-       <!-- Tab links -->
+       <!-- tab button links and sound function calls -->
        <div class="tab">
-       <button class="tablinks" onclick="window.location.href = home_link;"><span style='font-family: Abril Fatface'>Home</span></button>
-       <button class="tablinks" onclick="window.location.href = about_me_link;"><span style='font-family: Abril Fatface'>About Me</span></button>
-       <button class="tablinks" onclick="window.location.href = projects_link;"><span style='font-family: Abril Fatface'>Projects</span></button>
-       <button class="tablinks" onclick="window.location.href = contact_link;"><span style='font-family: Abril Fatface'>Contact/Links</span></button>
+       <!-- checkbox for the mute toggle -->
+       <div class="speaker">
+           <input type="checkbox" name="un-mute" id="un-mute" onchange="toggleMute(this)">
+           <label for="un-mute" class="unmute">
+           <i class="fas fa-volume-mute" style="cursor: pointer;" title="Mute icon" align="right" valign="top"></i>
+           </label>
+
+           <label for="un-mute" class="mute">
+           <i class="fas fa-volume-high" style="cursor: pointer;" title="Mute icon" align="right" valign="top"></i>
+           </label>
+       </div>
+       <!-- buttons for the tab links -->
+       <img class="logo_image" onclick="window.location.href = home_link;" src='https://github.com/BenLamberti/BenLamberti.github.io/blob/main/DRS_Simple_Logo.png?raw=true' height='100%' alt="logo_image">
+       <button class="tablinks" onclick="window.location.href = home_link;" onmouseover="playSound('sound1')" onmouseout="stopSound('sound1')"><span style='font-family: Abril Fatface'>Home</span></button>
+       <button class="tablinks" onclick="window.location.href = about_me_link;" onmouseover="playSound('sound2')" onmouseout="stopSound('sound2')"><span style='font-family: Abril Fatface'>About Me</span></button>
+       <button class="tablinks" onclick="window.location.href = projects_link;" onmouseover="playSound('sound3')" onmouseout="stopSound('sound3')"><span style='font-family: Abril Fatface'>Portfolio</span></button>
+       <button class="tablinks" onclick="window.location.href = contact_link;" onmouseover="playSound('sound4')" onmouseout="stopSound('sound4')"><span style='font-family: Abril Fatface'>Contact</span></button> 
        </div>
 
        <div class="audio_files">
@@ -47,9 +63,71 @@
        <audio id="sound4" src=''/>
        </div>
 
+       <canvas id="scroll-element" display='None'></canvas>
+
+        <!-- Slideshow element -->
+
+       <div class="slideshow">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Amp%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Banjo%205.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Banjo%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Banjo%203.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Banjo%204.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Boom%20Mic%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Boom%20Mic%202.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Boom%20Mic%203.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Boom%20Mic%204.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Drum%20Set%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Drum%20Set%2010.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Drum%20Set%202.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Drum%20Set%203.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Drum%20Set%204.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Drum%20Set%205.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Drum%20Set%206.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Drum%20Set%207.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Drum%20Set%208.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Drum%20Set%209.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Guitar%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Guitar%204.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Guitar%205.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Harp%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Harp%202.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Instrument%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Instrument%20Mix%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Microphone%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Microphone%203.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Microphone%204.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Microphone%205.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Microphone%206.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Microphone%207.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Microphone%208.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Mixing%20Desk%204.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Mixing%20Desk%205.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Organ%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Organ%202.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Organ%204.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Piano%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Piano%202.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Piano%203.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Piano%204.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Piano%205.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Piano%206.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Prepared%20Piano%202.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Saxophone%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Saxophone%202.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Saxophone%205.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Sound%20Recording%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Sound%20Recording%202.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Sound%20Recording%203.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Sound%20Recording%204.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Sound%20Recording%205.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Synth%201.png?raw=true">
+           <img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/BW%20Trumpet%201.png?raw=true">
+       </div>
+       
+
        <!-- Load external JavaScript -->
        <script src="scripts.js"></script>
 
-       </div> 
     </body>
 </html>

@@ -1,90 +1,136 @@
 <!doctype html>
 
-<html>
-    <head>
-        <meta charset="utf-8">
+ <html>
+     <head>
+         <meta charset="utf-8">
+         <script src="https://kit.fontawesome.com/087e123773.js" crossorigin="anonymous"></script>
 
-       <title>Projects</title>
+        <title>Projects</title>
 
-       <!-- Load external CSS styles -->
-       <link rel="stylesheet" href="styles.css">
-    </head>
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+     </head>
 
-    <body>
+     <body>
 
-       <style>
-       body {
-       background-color: black;
-       background-repeat: no-repeat;
-       background-attachment: fixed;
-       background-size: cover;
-       }
-       </style>
+        <style>
+        body {
+        background-color: black;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        }
+        </style>
 
-       <div class="header">
-       <h1>Projects</h1>
-       <p></p>
+        <div class="header" style="background-image: url('https://github.com/BenLamberti/deafrain.github.io/blob/main/Portfolio_Banner_Blue.png?raw=true'); background-size: cover; background-position: center;">
+            <h1 style="visibility: hidden">Projects</h1>
+            <p></p>
+          </div>
 
-       <nav>
-           <a id='about_me_link' href="./about-me.html" style="visibility: hidden">About Me</a> 
-           <a id='projects_link' href="./projects.html" style="visibility: hidden">Projects</a> 
-           <a id='home_link' href="./index.html" style="visibility: hidden">Homepage</a> 
-           <a id='contact_link' href="./contact.html" style="visibility: hidden">Contact/Links</a>
-       </nav>
+        <nav>
+            <a id='about_me_link' href="./about-me.html" style="visibility: hidden">About Me</a> 
+            <a id='projects_link' href="./projects.html" style="visibility: hidden">Portfolio</a> 
+            <a id='home_link' href="./index.html" style="visibility: hidden">Homepage</a> 
+            <a id='contact_link' href="./contact.html" style="visibility: hidden">Contact</a>
+        </nav>
 
-       <!-- Tab links -->
-       <div class="tab">
-           <button class="tablinks" onclick="window.location.href = home_link;"><span style='font-family: Abril Fatface'>Home</span></button>
-           <button class="tablinks" onclick="window.location.href = about_me_link;"><span style='font-family: Abril Fatface'>About Me</span></button>
-           <button class="tablinks" onclick="window.location.href = projects_link;"><span style='font-family: Abril Fatface'>Projects</span></button>
-           <button class="tablinks" onclick="window.location.href = contact_link;"><span style='font-family: Abril Fatface'>Contact/Links</span></button>
-       </div>
+        <!-- tab button links and sound function calls -->
+        <div class="tab">
+        <!-- checkbox for the mute toggle -->
+        <div class="speaker">
+            <input type="checkbox" name="un-mute" id="un-mute" onchange="toggleMute(this)">
+            <label for="un-mute" class="unmute">
+            <i class="fas fa-volume-mute" style="cursor: pointer;" title="Mute icon" align="right" valign="top"></i>
+            </label>
 
-       <div class="audio_files">
-           <audio id="sound1" src=''/>
-           <audio id="sound2" src=''/>
-           <audio id="sound3" src=''/>
-           <audio id="sound4" src=''/>
-       </div>
+            <label for="un-mute" class="mute">
+            <i class="fas fa-volume-high" style="cursor: pointer;" title="Mute icon" align="right" valign="top"></i>
+            </label>
+        </div>
+        <!-- buttons for the tab links -->
+        <img class="logo_image" onclick="window.location.href = home_link;" src='https://github.com/BenLamberti/BenLamberti.github.io/blob/main/DRS_Simple_Logo.png?raw=true' height='100%' alt="logo_image">
+        <button class="tablinks" onclick="window.location.href = home_link;" onmouseover="playSound('sound1')" onmouseout="stopSound('sound1')"><span style='font-family: Abril Fatface'>Home</span></button>
+        <button class="tablinks" onclick="window.location.href = about_me_link;" onmouseover="playSound('sound2')" onmouseout="stopSound('sound2')"><span style='font-family: Abril Fatface'>About Me</span></button>
+        <button class="tablinks" onclick="window.location.href = projects_link;" onmouseover="playSound('sound3')" onmouseout="stopSound('sound3')"><span style='font-family: Abril Fatface'>Portfolio</span></button>
+        <button class="tablinks" onclick="window.location.href = contact_link;" onmouseover="playSound('sound4')" onmouseout="stopSound('sound4')"><span style='font-family: Abril Fatface'>Contact</span></button> 
+        </div>
 
-       <div class="tiles">
-           <div class="tile">
-           <img src="https://via.placeholder.com/150" width="100%">
-           <h2 class="project_title">Tile 1</h2>
-           </div>
-           <div class="tile">
-           <img src="https://via.placeholder.com/150" width="100%">
-           <h2 class="project_title">Tile 2</h2>
-           </div>
-           <div class="tile">
-           <img src="https://via.placeholder.com/150" width="100%">
-           <h2 class="project_title">Tile 3</h2>
-           </div>
-           <div class="tile">
-           <img src="https://via.placeholder.com/150" width="100%">
-           <h2 class="project_title">Tile 4</h2>
-           </div>
-           <div class="tile">
-           <img src="https://via.placeholder.com/150" width="100%">
-           <h2 class="project_title">Tile 5</h2>
-           </div>
-           <div class="tile">
-           <img src="https://via.placeholder.com/150" width="100%">
-           <h2 class="project_title">Tile 6</h2>
-           </div>
-           <div class="tile">
-           <img src="https://via.placeholder.com/150" width="100%">
-           <h2 class="project_title">Tile 7</h2>
-           </div>
-           <div class="tile">
-           <img src="https://via.placeholder.com/150" width="100%">
-           <h2 class="project_title">Tile 8</h2>
-           </div>
-       </div>
+        <div class="audio_files">
+            <audio id="sound1" src=''/>
+            <audio id="sound2" src=''/>
+            <audio id="sound3" src=''/>
+            <audio id="sound4" src=''/>
+        </div>
 
-       <!-- Load external JavaScript -->
-       <script src="scripts.js"></script>
+        <div class="tiles">
+            <div class="tile">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/BUGA23_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">BUGA23</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/BalladOfACity_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Ballad Of A City</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/BicentenaryCelebrationBritishSinfonietta_CoverPhotoCompressed.png?raw=true" width="100%">
+            <h2 class="project_title">Bicentenary Celebration British Sinfonietta</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/DocumentingJazzConference2022_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Documenting Jazz Conference 2022</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/Duetudes_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Duetudes</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/EnchantedForest_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Enchanted Forest</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/GriefForPreparedHarp_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Grief For Prepared Harp</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/Qubie_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Qubie</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/RatGame_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Rat Game</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/SecretTangoStories_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Secret Tango Stories</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/SelectedMaterialWorks_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Selected Material Works</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/SwanseaMuseumDocumentary_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Swansea Museum Documentary</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/WarForTapeLoops_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">War For Tape Loops</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/WatchDogsTheRadioDrama_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Watch Dogs The Radio Drama</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/DeadNoizeInterview_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Dead Noize Interview</h2>
+            </div>
+            <div class="tile" onclick="window.location.href = [project_link]">
+            <img src="https://github.com/BenLamberti/deafrain.github.io/blob/main/SpotlightShowreel_CoverPhoto.png?raw=true" width="100%">
+            <h2 class="project_title">Spotlight Showreel</h2>
+            </div>
+        </div>
 
-       </div> 
-    </body>
-</html>
+        <!-- Load external JavaScript -->
+        <script src="scripts.js"></script>
+
+     </body>
+ </html>

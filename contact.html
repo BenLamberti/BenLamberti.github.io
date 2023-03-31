@@ -2,8 +2,8 @@
 
  <html>
      <head>
-         <meta charset="utf-8">
-
+        <meta charset="utf-8">
+        <script src="https://kit.fontawesome.com/087e123773.js" crossorigin="anonymous"></script>
         <title>Contact</title>
 
         <!-- Load external CSS styles -->
@@ -21,9 +21,10 @@
         }
         </style>
 
-        <div class="header">
-        <h1>Contact Me</h1>
-        <p></p>
+        <div class="header" style="background-image: url('https://github.com/BenLamberti/deafrain.github.io/blob/main/Contact_Page_Banner_Blue.png?raw=true'); background-size: cover; background-position: center;">
+            <h1 style="visibility: hidden">Contact</h1>
+            <p></p>
+        </div>
 
         <nav>
         <a id='about_me_link' href="./about-me.html" style="visibility: hidden">About Me</a> 
@@ -32,12 +33,25 @@
         <a id='contact_link' href="./contact.html" style="visibility: hidden">Contact/Links</a>
         </nav>
 
-        <!-- Tab links -->
+        <!-- tab button links and sound function calls -->
         <div class="tab">
-        <button class="tablinks" onclick="window.location.href = home_link;"><span style='font-family: Abril Fatface'>Home</span></button>
-        <button class="tablinks" onclick="window.location.href = about_me_link;"><span style='font-family: Abril Fatface'>About Me</span></button>
-        <button class="tablinks" onclick="window.location.href = projects_link;"><span style='font-family: Abril Fatface'>Projects</span></button>
-        <button class="tablinks" onclick="window.location.href = contact_link;"><span style='font-family: Abril Fatface'>Contact/Links</span></button>
+        <!-- checkbox for the mute toggle -->
+        <div class="speaker">
+            <input type="checkbox" name="un-mute" id="un-mute" onchange="toggleMute(this)">
+            <label for="un-mute" class="unmute">
+            <i class="fas fa-volume-mute" style="cursor: pointer;" title="Mute icon" align="right" valign="top"></i>
+            </label>
+
+            <label for="un-mute" class="mute">
+            <i class="fas fa-volume-high" style="cursor: pointer;" title="Mute icon" align="right" valign="top"></i>
+            </label>
+        </div>
+        <!-- buttons for the tab links -->
+        <img class="logo_image" onclick="window.location.href = home_link;" src='https://github.com/BenLamberti/BenLamberti.github.io/blob/main/DRS_Simple_Logo.png?raw=true' height='100%' alt="logo_image">
+        <button class="tablinks" onclick="window.location.href = home_link;" onmouseover="playSound('sound1')" onmouseout="stopSound('sound1')"><span style='font-family: Abril Fatface'>Home</span></button>
+        <button class="tablinks" onclick="window.location.href = about_me_link;" onmouseover="playSound('sound2')" onmouseout="stopSound('sound2')"><span style='font-family: Abril Fatface'>About Me</span></button>
+        <button class="tablinks" onclick="window.location.href = projects_link;" onmouseover="playSound('sound3')" onmouseout="stopSound('sound3')"><span style='font-family: Abril Fatface'>Portfolio</span></button>
+        <button class="tablinks" onclick="window.location.href = contact_link;" onmouseover="playSound('sound4')" onmouseout="stopSound('sound4')"><span style='font-family: Abril Fatface'>Contact</span></button> 
         </div>
 
         <div class="audio_files">
@@ -47,9 +61,65 @@
         <audio id="sound4" src=''/>
         </div>
 
-        <!-- Load external JavaScript -->
+        <div class="contact-container">
+		<form action="https://formspree.io/f/xdovlppl" method="post">
+			<label for="name"><span style='font-family: Abril Fatface'>Name</span></label>
+			<input type="text" id="name" name="name" required>
+			<label for="email"><span style='font-family: Abril Fatface'>Email</span></label>
+			<input type="email" id="email" name="email" required>
+			<label for="message"><span style='font-family: Abril Fatface'>Message</span></label>
+			<textarea id="message" name="message" required></textarea>
+			<input type="submit" value="Send">
+		</form>
+		<div class="contact-info">
+			<p>Find me here:</p>
+			<ul>
+				<li><a href="https://www.tiktok.com/@deafrainsound"><i class="fab fa-tiktok"></i></a></li>
+				<li><a href="https://twitter.com/deafrainsound/"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="https://instagram.com/deafrainsound/"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.youtube.com/@DeafRainSound"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="https://www.fiverr.com/parrotracks"><img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/fi.png?raw=true"/></a></li>
+        <li><a href="https://www.pond5.com/artist/deafrainsound"><img src="https://github.com/BenLamberti/BenLamberti.github.io/blob/main/p5.png?raw=true"/></a></li>
+			</ul>
+		</div>
+	</div>
+
+
+       <!-- Load external JavaScript -->
         <script src="scripts.js"></script>
 
         </div> 
      </body>
+     <script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
  </html>
