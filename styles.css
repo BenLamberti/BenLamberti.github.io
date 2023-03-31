@@ -153,10 +153,11 @@ input#un-mute:checked ~ .mute i {
 /* Styling for the home page */
 
 .biography {
-  position: absolute;
-  top: 220px;
+  position: relative;
+  top: 0;
   left: 2%;
   width: 96%;
+  transform: translate(0, -360px);
 }
 
 .biography p {
@@ -164,9 +165,10 @@ input#un-mute:checked ~ .mute i {
   margin: 1em 0;
 }
 
-.main_photo {
+.biography img {
   position: absolute;
   width: 100%;
+  height: fit-content;
 }
 
 /* Style the container for the project tiles */
